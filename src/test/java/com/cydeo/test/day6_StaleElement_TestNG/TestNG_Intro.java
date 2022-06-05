@@ -6,27 +6,31 @@ import org.testng.annotations.*;
 
 public class TestNG_Intro {
 
+    // beforeClass will be running before all test methods
     @BeforeClass
     public void setUp(){
         System.out.println("Setting up...");
     }
 
+    // afterClass will be running after all test methods
     @AfterClass
     public void tearDown(){
         System.out.println("After class is done");
     }
 
+    // beforeMethod will be running before each test method
     @BeforeMethod
     public void setUpMethod(){
         System.out.println("Setting up method");
     }
 
+    // afterMethod will be running after each test method
     @AfterMethod
     public void tearDownMethod(){
         System.out.println("After method is done");
     }
 
-    @Test (priority = 2)
+    @Test
     public void test1(){
         System.out.println("Test 1 is running...");
         String actual = "apple";
@@ -41,7 +45,7 @@ public class TestNG_Intro {
 //        System.out.println("Test 2 is running..."); // won't run because there is no @Test annotation, it is not runnable
 //    }
 
-    @Test (priority = 1)
+    @Test
     public void test2(){
         System.out.println("Test 2 is running...");
 
