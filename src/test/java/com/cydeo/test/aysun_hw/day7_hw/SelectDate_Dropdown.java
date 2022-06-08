@@ -3,6 +3,7 @@ package com.cydeo.test.aysun_hw.day7_hw;
 import com.cydeo.test.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -33,6 +34,10 @@ public class SelectDate_Dropdown {
         Select monthDropDown = new Select(driver.findElement(By.id("month")));
         Select dayDropdown = new Select(driver.findElement(By.id("day")));
 
+        for (WebElement eachYearOption : yearDropdown.getOptions()){
+            System.out.println(eachYearOption.getText());
+        }
+
         //Select year using   : visible text
         yearDropdown.selectByVisibleText("1923");
         //Select month using  : value attribute Select
@@ -51,6 +56,10 @@ public class SelectDate_Dropdown {
         Assert.assertEquals(actualYear,expectedYear, "Wrong year");
         Assert.assertEquals(actualMonth,expectedMonth, "Wrong month");
         Assert.assertEquals(actualDay,expectedDay,"Wrong day");
+                                   // OR
+        Assert.assertTrue(actualYear.equals(expectedYear), "Wrong year");
+        Assert.assertTrue(actualMonth.equals(expectedMonth), "Wrong month");
+        Assert.assertTrue(actualDay.equals(expectedDay), "Wrong day");
     }
 
     @AfterMethod
