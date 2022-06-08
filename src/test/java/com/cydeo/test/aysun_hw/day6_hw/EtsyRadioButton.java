@@ -1,4 +1,4 @@
-package com.cydeo.test.aysun_hw.day5_hw;
+package com.cydeo.test.aysun_hw.day6_hw;
 
 import com.cydeo.test.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
