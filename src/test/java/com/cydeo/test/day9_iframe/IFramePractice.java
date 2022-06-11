@@ -41,13 +41,20 @@ public class IFramePractice extends TestBase {
 //        5- Verify "Hello World" text is written in comment body
         Assert.assertEquals(commentBody.getText(), "Hello World");
 
+        // if you have a nested frame and want to switch to the direct parent of your current frame, use below
         driver.switchTo().parentFrame();
-       // driver.switchTo().defaultContent();
+
+
+       // driver.switchTo().defaultContent(); ---> will switch to main HTML (parent of all HTML)
 
 //        6- Verify header "An iFrame containing the TinyMCE
 //        WYSIWYG Editor" is displayed
         WebElement headerText = driver.findElement(By.tagName("h3"));
         Assert.assertTrue(headerText.isDisplayed(), "failed");
+
+        String actualHeader = headerText.getText();
+        String expectedHeader = "An iFrame containing the TinyMCE WYSIWYG Editor";
+        Assert.assertEquals(actualHeader,expectedHeader,"failed");
 
     }
 
