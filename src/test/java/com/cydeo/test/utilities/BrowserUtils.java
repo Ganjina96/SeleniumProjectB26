@@ -31,5 +31,9 @@ public class BrowserUtils {
         Assert.assertTrue(actualTitle.contains(expectedTitle), "Title verification failed");
     }
 
+    public static void verifyTitle(WebDriver driver, String expectedTitle){
+        Assert.assertEquals(driver.getTitle(),expectedTitle,"Title verification failed");
+    }
+
 
 }

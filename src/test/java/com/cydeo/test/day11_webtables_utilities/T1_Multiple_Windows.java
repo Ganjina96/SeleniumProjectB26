@@ -3,7 +3,6 @@ package com.cydeo.test.day11_webtables_utilities;
 import com.cydeo.test.base.TestBase;
 import com.cydeo.test.utilities.BrowserUtils;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Set;
