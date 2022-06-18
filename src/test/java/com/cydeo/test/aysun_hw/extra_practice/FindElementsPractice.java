@@ -59,10 +59,10 @@ public class FindElementsPractice extends TestBase {
                     count++;
                 }
             }
-            Assert.assertEquals(count, 109);
 
         } catch (StaleElementReferenceException e) {
             System.out.println("StaleElementReferenceException is thrown");
         }
+        Assert.assertEquals(count, 109);
     }
 }
