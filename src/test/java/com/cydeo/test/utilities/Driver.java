@@ -46,6 +46,13 @@ public class Driver {
         }
         return driver;
     }
+    // this method will make sure our driver value is always null after using quit() method
+    public static void closeDriver(){
+        if (driver != null){
+            driver.quit(); // terminate the existing driver session. Using this the driver will not be even null
+            driver = null;
+        }
+    }
 
 
 
