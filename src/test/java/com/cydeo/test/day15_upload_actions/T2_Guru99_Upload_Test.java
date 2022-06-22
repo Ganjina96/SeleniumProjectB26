@@ -32,5 +32,7 @@ public class T2_Guru99_Upload_Test {
         WebElement result = Driver.getDriver().findElement(By.xpath("//h3[@id='res']//center"));
         String actual = result.getText();
         Assert.assertEquals(actual,expected);
+
+        Driver.closeDriver();
     }
 }
