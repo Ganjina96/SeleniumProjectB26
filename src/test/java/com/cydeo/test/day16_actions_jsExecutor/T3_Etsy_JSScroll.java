@@ -35,6 +35,7 @@ public class T3_Etsy_JSScroll {
         Thread.sleep(3000);
         WebElement msg = Driver.getDriver().findElement(By.cssSelector("div[class='wt-alert wt-alert--inline wt-alert--success-01 wt-text-body-01']"));
         Assert.assertTrue(msg.isDisplayed());
+        Assert.assertEquals(msg.getText(),"Great! We've sent you an email to confirm your subscription.");
 
         Driver.closeDriver();
     }
