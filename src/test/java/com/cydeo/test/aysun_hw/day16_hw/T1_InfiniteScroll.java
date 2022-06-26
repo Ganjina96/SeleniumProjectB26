@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class T1_InfiniteScroll {
 
     @Test
-    public void infinite_scroll() {
+    public void infinite_scroll() throws InterruptedException {
         // 1- Open a chrome browser
         // 2- Go to:https://practice.cydeo.com/infinite_scroll
         Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
@@ -15,6 +15,7 @@ public class T1_InfiniteScroll {
         // 3- Use below JavaScript method and scroll
         // a. 750 pixels down 10times.
         for (int i = 1; i <= 10 ; i++) {
+            Thread.sleep(3000);
             ((JavascriptExecutor)Driver.getDriver()).executeScript("window.scrollBy(0,750)");
         }
 
