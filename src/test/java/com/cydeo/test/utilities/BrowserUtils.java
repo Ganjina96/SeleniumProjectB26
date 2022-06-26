@@ -1,6 +1,9 @@
 package com.cydeo.test.utilities;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Set;
@@ -33,6 +36,11 @@ public class BrowserUtils {
 
     public static void verifyTitle(WebDriver driver, String expectedTitle){
         Assert.assertEquals(driver.getTitle(),expectedTitle,"Title verification failed");
+    }
+
+    public static void waitForInvisibilityOf(WebElement element){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
 
